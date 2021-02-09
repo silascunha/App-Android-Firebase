@@ -2,7 +2,8 @@
 <resources>
     <color name="colorPrimary">#2196F3</color>
     <color name="colorPrimaryDark">#2484D1</color>
-    <color name="colorAccent">#DA4A4F</color>
+    <color name="colorAccent">#41C6FB</color>
     <color name="colorTextTint">#5D6468</color>
     <color name="colorButtonText">#FFFFFF</color>
+    <color name="colorEmptyFields">#CA2E2E</color>
 </resources>
