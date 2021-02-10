@@ -1,5 +1,6 @@
 package com.coldy.organizzeclone.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -95,9 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this,
-                                    "Login realizado com sucesso!", Toast.LENGTH_SHORT)
-                                    .show();
+                            finish();
                         }
                         else {
                             try {
@@ -113,4 +112,5 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+
 }

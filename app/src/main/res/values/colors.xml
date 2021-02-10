@@ -6,4 +6,14 @@
     <color name="colorTextTint">#5D6468</color>
     <color name="colorButtonText">#FFFFFF</color>
     <color name="colorEmptyFields">#CA2E2E</color>
+
+    <!-- Cores despesa -->
+    <color name="colorPrimaryDespesa">#E6445C</color>
+    <color name="colorPrimaryDarkDespesa">#C8394F</color>
+    <color name="colorAccentDespesa">#ED556C</color>
+
+    <!-- Cores receita -->
+    <color name="colorPrimaryReceita">#35E67C</color>
+    <color name="colorPrimaryDarkReceita">#36B569</color>
+    <color name="colorAccentReceita">#5AE491</color>
 </resources>
