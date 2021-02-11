@@ -1,1 +1,2 @@
 # App Android com Firebase
+Projeto realizado como parte de um curso de Android na plataforma da Udemy, onde é feito um aplicativo simplificado baseado no app já existente de controle financeiro (Organizze) utilizando o Firebase como banco de dados e autenticação de usuário. O projeto é feito em vídeo no curso, porém tomo a liberdade de colocar funcionalidades a mais personalizadas minhas para explorar mais dos recursos do Android com Java, e recursos do Firebase.
