@@ -1,24 +1,33 @@
 package com.coldy.organizzeclone.activity;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
+import androidx.annotation.NonNull;
 import com.coldy.organizzeclone.R;
-import com.coldy.organizzeclone.config.AuthConfig;
+import com.coldy.organizzeclone.config.FirebaseConfig;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.GetTokenResult;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 
-public class MainActivity extends IntroActivity {
+public class LauncherActivity extends IntroActivity {
 
     private FirebaseAuth auth;
+
+    private boolean autenticado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        verificarUsuarioLogado();
+        //verificarUsuarioLogado();
 
         setButtonBackVisible(false);
         setButtonNextVisible(false);
@@ -67,8 +76,7 @@ public class MainActivity extends IntroActivity {
     }
 
     private void verificarUsuarioLogado() {
-        auth = AuthConfig.getAuthInstance();
-
+        auth = FirebaseConfig.getAuthInstance();
         if (auth.getCurrentUser() != null) {
             abrirTelaPrincipal();
         }

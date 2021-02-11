@@ -8,8 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.coldy.organizzeclone.R;
 import com.coldy.organizzeclone.activity.util.EditTextController;
-import com.coldy.organizzeclone.config.AuthConfig;
+import com.coldy.organizzeclone.config.FirebaseConfig;
 import com.coldy.organizzeclone.model.Usuario;
+import com.coldy.organizzeclone.util.MyBase64;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -33,7 +34,7 @@ public class CadastroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-        auth = AuthConfig.getAuthInstance();
+        auth = FirebaseConfig.getAuthInstance();
 
         initializeViews();
 
@@ -93,12 +94,15 @@ public class CadastroActivity extends AppCompatActivity {
         return errors == 0;
     }
 
-    private void cadastrarUsuario(Usuario usuario) {
+    private void cadastrarUsuario(final Usuario usuario) {
         auth.createUserWithEmailAndPassword(usuario.getEmail(), usuario.getSenha())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            String id = MyBase64.codificar(usuario.getEmail());
+                            usuario.setId(id);
+                            usuario.salvar();
                             finish();
                         }
                         else {

@@ -25,7 +25,7 @@
         <activity android:name=".activity.CadastroActivity">
         </activity>
         <activity
-                android:name=".activity.MainActivity"
+                android:name=".activity.LauncherActivity"
                 android:theme="@style/Theme.Intro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
